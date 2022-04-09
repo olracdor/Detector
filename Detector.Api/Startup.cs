@@ -1,5 +1,8 @@
 using Common;
-using DetectorApi.Providers;
+using Detector.Api.Filters;
+using Detector.Api.Providers;
+using Detector.Api.Validators;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,9 +24,13 @@ namespace FaceFinderApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<ImageAnnotatorClientProvider>();
+            services.AddScoped<ImageAnnotatorClientProvider>();
 
             services.SetupSwaggerDefinition(new SwaggerConfiguration(Configuration));
+            services.AddMvc(o=>{
+                o.Filters.Add(new ValidationFilter());
+            })
+                .AddFluentValidation(v => v.RegisterValidatorsFromAssemblyContaining<FaceDetectorValidator>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

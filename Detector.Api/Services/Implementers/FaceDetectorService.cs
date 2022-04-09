@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
-using DetectorApi.Models;
-using DetectorApi.Providers;
+using Detector.Api.Models;
+using Detector.Api.Providers;
 using Google.Cloud.Vision.V1;
 
-namespace FaceFinderApi.Services.Implementers
+namespace Detector.Api.Services.Implementers
 {
     public class FaceDetectorService : IFaceDetectorService
     {

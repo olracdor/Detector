@@ -1,5 +1,0 @@
-/Users/rodsantillan/Projects/FaceFinderApi/FaceFinderApi/obj/Debug/netcoreapp3.1/DetectorApi.csprojAssemblyReference.cache
-/Users/rodsantillan/Projects/FaceFinderApi/FaceFinderApi/obj/Debug/netcoreapp3.1/DetectorApi.AssemblyInfoInputs.cache
-/Users/rodsantillan/Projects/FaceFinderApi/FaceFinderApi/obj/Debug/netcoreapp3.1/DetectorApi.AssemblyInfo.cs
-/Users/rodsantillan/Projects/FaceFinderApi/FaceFinderApi/obj/Debug/netcoreapp3.1/DetectorApi.csproj.CoreCompileInputs.cache
-/Users/rodsantillan/Projects/FaceFinderApi/FaceFinderApi/obj/Debug/netcoreapp3.1/DetectorApi.MvcApplicationPartsAssemblyInfo.cache

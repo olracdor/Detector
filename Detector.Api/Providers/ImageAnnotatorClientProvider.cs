@@ -1,6 +1,6 @@
 ﻿using Google.Cloud.Vision.V1;
 
-namespace DetectorApi.Providers
+namespace Detector.Api.Providers
 {
     public class ImageAnnotatorClientProvider
     {

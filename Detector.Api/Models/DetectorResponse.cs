@@ -1,4 +1,4 @@
-﻿namespace DetectorApi.Models
+﻿namespace Detector.Api.Models
 {
     public class DetectorResponse
     {

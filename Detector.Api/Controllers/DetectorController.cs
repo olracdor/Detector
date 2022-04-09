@@ -1,17 +1,15 @@
-﻿using DetectorApi.Models;
+﻿using Detector.Api.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using FaceFinderApi.Services;
+using Detector.Api.Services;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Swashbuckle.AspNetCore.Annotations;
-using DetectorApi.Services;
 using System;
-using Common.Exceptions;
-using Common.Models;
 using Microsoft.AspNetCore.Authorization;
+using Detector.Api.Validators;
 
-namespace DetectorApi.Controllers
+namespace Detector.Api.Controllers
 {
     [ApiController]
     [Route("Detector")]
@@ -20,14 +18,13 @@ namespace DetectorApi.Controllers
 
         private readonly ILogger<DetectorController> _logger;
         private IFaceDetectorService _faceDetectorService;
-        private IFaceDetectorValidationService _faceDetectorValidationService;
+        private FaceDetectorValidator _faceDetectorValidator;
 
-        public DetectorController(ILogger<DetectorController> logger, IFaceDetectorService faceDetectorService
-            , IFaceDetectorValidationService faceDetectorValidationService)
+        public DetectorController(ILogger<DetectorController> logger, IFaceDetectorService faceDetectorService, FaceDetectorValidator faceDetectorValidator)
         {
             _logger = logger;
             _faceDetectorService = faceDetectorService;
-            _faceDetectorValidationService = faceDetectorValidationService;
+            _faceDetectorValidator = faceDetectorValidator;
         }
 
         /// <summary>
@@ -37,7 +34,7 @@ namespace DetectorApi.Controllers
         [HttpGet]
         [Route("Health")]
         [SwaggerResponse(StatusCodes.Status200OK)]
-        public ActionResult HealthCheck(DetectorRequest request)
+        public ActionResult HealthCheck()
         {
             return Ok();
         }
@@ -55,17 +52,16 @@ namespace DetectorApi.Controllers
             try
             {
                 _logger.LogInformation($"Processing image with Id {request.Id}");
-                _faceDetectorValidationService.ValidateRequestPayload(request);
+                //Validations
+                var result = _faceDetectorValidator.ValidateAsync(request);
+                if (!result.Result.IsValid)
+                    return BadRequest(result.Result.Errors);
+
+                //Process request
                 var response = await _faceDetectorService.DetectFace(request.ImageBase64);
                 _logger.LogInformation($"Done Processing image with Id {request.Id}");
                 return Ok(response);
-            }catch(BadRequestException ex)
-            {
-                string message = $"Missing required field {ex.Message}";
-                _logger.LogInformation($"Invalid request encountered for request with Id {request.Id} {message}");
-                BadRequestResponse response = new BadRequestResponse("E01", message);
 
-                return BadRequest(response);
             }
             catch (Exception ex)
             {

@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace DetectorApi.Test
+namespace Detector.Api.Test
 {
     [Parallelizable(ParallelScope.Fixtures)]
     public abstract class BaseConfigurationTestFixture

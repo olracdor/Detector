@@ -1,8 +1,6 @@
 ﻿using Autofac;
-using DetectorApi.Services;
-using DetectorApi.Services.Implementers;
-using FaceFinderApi.Services;
-using FaceFinderApi.Services.Implementers;
+using Detector.Api.Services;
+using Detector.Api.Services.Implementers;
 
 namespace DetectorApi
 {
@@ -15,7 +13,6 @@ namespace DetectorApi
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<IFaceDetectorService>().As<FaceDetectorService>();
-            builder.RegisterType<IFaceDetectorValidationService>().As<FaceDetectorValidationService>();
         }
     }
 }

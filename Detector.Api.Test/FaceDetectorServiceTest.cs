@@ -1,7 +1,7 @@
 ﻿using System;
-using DetectorApi.Models;
-using DetectorApi.Providers;
-using FaceFinderApi.Services.Implementers;
+using Detector.Api.Models;
+using Detector.Api.Providers;
+using Detector.Api.Services.Implementers;
 using Google.Cloud.Vision.V1;
 using Moq;
 using NUnit.Framework;

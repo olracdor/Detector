@@ -1,8 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using DetectorApi.Models;
+﻿using System.Threading.Tasks;
+using Detector.Api.Models;
 
-namespace FaceFinderApi.Services
+namespace Detector.Api.Services
 {
     public interface IFaceDetectorService
     {
