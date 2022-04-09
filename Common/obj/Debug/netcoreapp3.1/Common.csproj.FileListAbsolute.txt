@@ -1,0 +1,9 @@
+/Users/rodsantillan/Projects/FaceFinderApi/Common/bin/Debug/netcoreapp3.1/Common.deps.json
+/Users/rodsantillan/Projects/FaceFinderApi/Common/bin/Debug/netcoreapp3.1/Common.dll
+/Users/rodsantillan/Projects/FaceFinderApi/Common/bin/Debug/netcoreapp3.1/Common.pdb
+/Users/rodsantillan/Projects/FaceFinderApi/Common/obj/Debug/netcoreapp3.1/Common.csprojAssemblyReference.cache
+/Users/rodsantillan/Projects/FaceFinderApi/Common/obj/Debug/netcoreapp3.1/Common.AssemblyInfoInputs.cache
+/Users/rodsantillan/Projects/FaceFinderApi/Common/obj/Debug/netcoreapp3.1/Common.AssemblyInfo.cs
+/Users/rodsantillan/Projects/FaceFinderApi/Common/obj/Debug/netcoreapp3.1/Common.csproj.CoreCompileInputs.cache
+/Users/rodsantillan/Projects/FaceFinderApi/Common/obj/Debug/netcoreapp3.1/Common.dll
+/Users/rodsantillan/Projects/FaceFinderApi/Common/obj/Debug/netcoreapp3.1/Common.pdb
