@@ -12,7 +12,7 @@ using Detector.Api.Validators;
 namespace Detector.Api.Controllers
 {
     [ApiController]
-    [Route("Detector")]
+    [Route("api/v1/Detector")]
     public class DetectorController : ControllerBase
     {
 
