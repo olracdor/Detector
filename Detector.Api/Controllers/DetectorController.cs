@@ -47,7 +47,7 @@ namespace Detector.Api.Controllers
         [Authorize]
         [Route("Face")]
         [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(DetectorResponse))]
-        public async Task<ActionResult<DetectorResponse>> DetectFace(DetectorRequest request)
+        public async Task<ActionResult<DetectorResponse>> DetectFace([FromBody] DetectorRequest request)
         {
             try
             {
